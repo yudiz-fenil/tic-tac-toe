@@ -1,0 +1,302 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 1080,
+        "borderHeight": 1920
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "bce34c1a-83c1-4d7d-90bd-243ab9afcfd5",
+            "label": "container_bg",
+            "components": [],
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "1882109b-531c-4fd8-9309-0c78082fb1dc",
+                    "label": "txt_turn",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 620,
+                    "y": 180,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Turn",
+                    "fontFamily": "Verdana",
+                    "fontSize": "84px",
+                    "color": "#000"
+                },
+                {
+                    "type": "Text",
+                    "id": "e1ec9fd4-a32a-44a4-b74e-75521845001b",
+                    "label": "txt_game",
+                    "components": [],
+                    "x": 540,
+                    "y": 51,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Tic Tac Toe",
+                    "fontFamily": "Verdana",
+                    "fontSize": "84px",
+                    "color": "#000"
+                },
+                {
+                    "type": "Image",
+                    "id": "ad87f2a9-34cb-434f-9869-a817f40d5013",
+                    "label": "turn_img",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "zero"
+                    },
+                    "x": 460,
+                    "y": 180,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "55501e59-78ef-4fcc-a243-4ea06999e562",
+            "label": "container_map",
+            "scope": "CLASS",
+            "components": [],
+            "x": 540,
+            "y": 859,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e4fe45a6-49b7-4da5-85cb-a4b540d7f5f4",
+                    "label": "map_0",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "x": -320,
+                    "y": -320
+                },
+                {
+                    "type": "Image",
+                    "id": "57f00557-938d-4f48-9f9a-c2491e220876",
+                    "label": "map_1",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "y": -320
+                },
+                {
+                    "type": "Image",
+                    "id": "2c168550-cd05-4881-9a05-61cdd327eed2",
+                    "label": "map_2",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "x": 320,
+                    "y": -320
+                },
+                {
+                    "type": "Image",
+                    "id": "5131d464-32c6-4cfa-aed1-828a51ed2a80",
+                    "label": "map_3",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "x": -320
+                },
+                {
+                    "type": "Image",
+                    "id": "f9d0b954-68ef-4701-9d72-6e33c72543be",
+                    "label": "map_4",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "f2984f95-1169-4b02-b542-05425229ab51",
+                    "label": "map_5",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "x": 320
+                },
+                {
+                    "type": "Image",
+                    "id": "4649068c-d279-4386-913e-3433a6e40d10",
+                    "label": "map_6",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "x": -320,
+                    "y": 320
+                },
+                {
+                    "type": "Image",
+                    "id": "056973bc-8656-4326-af13-0795c21f2035",
+                    "label": "map_7",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "y": 320
+                },
+                {
+                    "type": "Image",
+                    "id": "ddf730df-7e59-443c-9a89-6f53d0ecb064",
+                    "label": "map_8",
+                    "useGameObjectName": true,
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "map"
+                    },
+                    "x": 320,
+                    "y": 320
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "9f4072ef-2153-4a6a-a9e5-260d71665d67",
+            "label": "container_board",
+            "components": [],
+            "x": 540,
+            "y": 859,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "19ecfd79-994a-4b8b-8fb7-cc707c2599ed",
+                    "label": "rectangle_1",
+                    "components": [],
+                    "x": 160,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "width": 10,
+                    "height": 900
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "1761fcde-1368-4d4c-b1d5-db14e9f0da8f",
+                    "label": "rectangle",
+                    "components": [],
+                    "x": -160,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "width": 10,
+                    "height": 900
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "70d33ad8-cc5a-4943-8622-3f8b10ef2b42",
+                    "label": "rectangle_2",
+                    "components": [],
+                    "y": -160,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "width": 900,
+                    "height": 10
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "9c94a3ed-5f64-481f-8586-31d850134f2f",
+                    "label": "rectangle_3",
+                    "components": [],
+                    "y": 160,
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "width": 900,
+                    "height": 10
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "19583c9e-1692-4509-a020-88bd31bb109e",
+                    "label": "line",
+                    "scope": "CLASS",
+                    "components": [],
+                    "visible": false,
+                    "isFilled": true,
+                    "fillColor": "#f00",
+                    "width": 940,
+                    "height": 10
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "73f84dbe-7553-41e1-bc7b-c082818bd6c3",
+            "label": "container_btn_restart",
+            "scope": "CLASS",
+            "components": [],
+            "x": 540,
+            "y": 1593,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "d225f17c-1214-4a7a-973d-993d3f77726b",
+                    "label": "btn_restart",
+                    "scope": "CLASS",
+                    "components": [],
+                    "isFilled": true,
+                    "fillColor": "#000",
+                    "width": 512,
+                    "height": 128
+                },
+                {
+                    "type": "Text",
+                    "id": "481f2fc2-2ede-4801-b212-6d8f4d246753",
+                    "label": "text_1",
+                    "components": [],
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Restart",
+                    "fontFamily": "Verdana",
+                    "fontSize": "84px"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

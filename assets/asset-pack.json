@@ -1,0 +1,33 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "src/scripts/Bot.js",
+                "type": "script",
+                "key": "Bot"
+            },
+            {
+                "url": "assets/images/cross.png",
+                "type": "image",
+                "key": "cross"
+            },
+            {
+                "url": "assets/images/map.png",
+                "type": "image",
+                "key": "map"
+            },
+            {
+                "url": "assets/images/zero.png",
+                "type": "image",
+                "key": "zero"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
