@@ -95,32 +95,42 @@ class Level extends Phaser.Scene {
     // container_board
     const container_board = this.add.container(540, 859);
 
-    // rectangle_1
-    const rectangle_1 = this.add.rectangle(160, 0, 10, 900);
-    rectangle_1.isFilled = true;
-    rectangle_1.fillColor = 0;
-    container_board.add(rectangle_1);
-
     // rectangle
     const rectangle = this.add.rectangle(-160, 0, 10, 900);
+    rectangle.scaleX = 0;
+    rectangle.scaleY = 0;
     rectangle.isFilled = true;
     rectangle.fillColor = 0;
     container_board.add(rectangle);
 
+    // rectangle_1
+    const rectangle_1 = this.add.rectangle(160, 0, 10, 900);
+    rectangle_1.scaleX = 0;
+    rectangle_1.scaleY = 0;
+    rectangle_1.isFilled = true;
+    rectangle_1.fillColor = 0;
+    container_board.add(rectangle_1);
+
     // rectangle_2
     const rectangle_2 = this.add.rectangle(0, -160, 900, 10);
+    rectangle_2.scaleX = 0;
+    rectangle_2.scaleY = 0;
     rectangle_2.isFilled = true;
     rectangle_2.fillColor = 0;
     container_board.add(rectangle_2);
 
     // rectangle_3
     const rectangle_3 = this.add.rectangle(0, 160, 900, 10);
+    rectangle_3.scaleX = 0;
+    rectangle_3.scaleY = 0;
     rectangle_3.isFilled = true;
     rectangle_3.fillColor = 0;
     container_board.add(rectangle_3);
 
     // line
     const line = this.add.rectangle(0, 0, 940, 10);
+    line.scaleX = 0;
+    line.scaleY = 0;
     line.visible = false;
     line.isFilled = true;
     line.fillColor = 16711680;
@@ -173,6 +183,7 @@ class Level extends Phaser.Scene {
     this.txt_turn = txt_turn;
     this.turn_img = turn_img;
     this.container_map = container_map;
+    this.container_board = container_board;
     this.line = line;
     this.container_btn_restart = container_btn_restart;
     this.btn_restart = btn_restart;
@@ -186,6 +197,8 @@ class Level extends Phaser.Scene {
   turn_img;
   /** @type {Phaser.GameObjects.Container} */
   container_map;
+  /** @type {Phaser.GameObjects.Container} */
+  container_board;
   /** @type {Phaser.GameObjects.Rectangle} */
   line;
   /** @type {Phaser.GameObjects.Container} */
@@ -199,13 +212,12 @@ class Level extends Phaser.Scene {
 
   create() {
     this.editorCreate();
-    this.oBot = new Bot(this);
-    this.isGameOver = false;
+    this.animateBoard();
+    this.board = ["", "", "", "", "", "", "", "", ""];
+    this.nCountMove = 0;
+    this.player1 = "cross";
+    this.player2 = "zero";
     this.isBot = true;
-    this.btn_restart.setInteractive().on("pointerup", () => {
-      console.clear();
-      this.scene.restart();
-    });
     this.bPlayerTurn = true;
     this.win = [
       [0, 1, 2],
@@ -217,16 +229,28 @@ class Level extends Phaser.Scene {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    this.board = ["", "", "", "", "", "", "", "", ""];
-    this.nCountMove = 0;
-    this.player1 = "cross";
-    this.player2 = "zero";
     this.turn_img.setTexture(this.player1);
+    this.oBot = new Bot(this);
+    this.btn_restart.setInteractive().on("pointerup", () => {
+      console.clear();
+      this.scene.restart();
+    });
+  }
+  animateBoard() {
+    this.container_board.list.forEach((line) => {
+      this.tweens.add({
+        targets: line,
+        ease: "Power3",
+        scaleX: 1,
+        scaleY: 1,
+        duration: 1000,
+      });
+    });
   }
 
   changePlayerTurn() {
     this.bPlayerTurn = !this.bPlayerTurn;
-    if (this.isBot && !this.bPlayerTurn && !this.isGameOver) {
+    if (this.isBot && !this.bPlayerTurn ) {
       const nIndex = this.oBot.makeMove(this.board);
       setTimeout(() => {
         this.playMove(nIndex);
@@ -236,9 +260,17 @@ class Level extends Phaser.Scene {
   }
   playMove(nIndex) {
     if (this.container_map.list[nIndex].texture.key == "map") {
+      this.container_map.list[nIndex].setScale(0, 0);
       this.container_map.list[nIndex].setTexture(
         this.bPlayerTurn ? this.player1 : this.player2
       );
+      this.tweens.add({
+        targets: this.container_map.list[nIndex],
+        ease: "Power3",
+        scaleX: 1,
+        scaleY: 1,
+        duration: 500,
+      });
       this.board[nIndex] = this.bPlayerTurn ? this.player1 : this.player2;
       this.nCountMove++;
       if (this.nCountMove > 4) {
@@ -248,7 +280,6 @@ class Level extends Phaser.Scene {
         }
         if (nWinner != "tie") {
           this.showResult(nWinner);
-          this.isGameOver = true;
         } else {
           if (this.nCountMove <= 8) this.changePlayerTurn();
         }
@@ -292,6 +323,7 @@ class Level extends Phaser.Scene {
     });
   }
   drawLine(nPoint1, nMidPoint, nPoint2) {
+    this.line.setScale(0, 0);
     this.line.setPosition(
       this.container_map.list[nMidPoint].x,
       this.container_map.list[nMidPoint].y
@@ -306,6 +338,13 @@ class Level extends Phaser.Scene {
     );
     this.line.setAngle(angle);
     this.line.setVisible(true);
+    this.tweens.add({
+      targets: this.line,
+      ease: "Power3",
+      scaleX: 1,
+      scaleY: 1,
+      duration: 500,
+    });
   }
 
   /* END-USER-CODE */

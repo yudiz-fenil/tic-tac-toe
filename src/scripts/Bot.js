@@ -12,10 +12,10 @@ class Bot {
       [2, 4, 6],
     ];
     this.nBotLevel = 1;
-    this.sBotSymbol = "zero";
+    this.sPlayerSymbol = this.oScene.player1;
+    this.sBotSymbol = this.oScene.player2;
   }
   makeMove(board) {
-    this.sBotSymbol = this.oScene.player2;
     switch (this.nBotLevel) {
       case 1:
         return this.level1Move(board);
@@ -35,13 +35,14 @@ class Bot {
     const aMoves = [];
     const aCombination = [];
     for (let i = 0; i < this.win.length; i++) {
-      const aComb = this.win[i];
-      console.log(board);
+      const aMoves = this.win[i];
       for (let j = 0; j < board.length; j++) {
-        console.log(board);
-        if (board[j] == this.sBotSymbol) {
-          if (aComb.includes(j)) {
-            aCombination.push(i);
+        const move = board[j];
+        if (move == this.sPlayerSymbol) {
+          if (aMoves.includes(j)) {
+            // console.log(aMoves, aMoves.indexOf(j), j);
+            aMoves.splice(aMoves.indexOf(j), 1);
+            // return aMoves[Math.ceil(Math.random() * aMoves.length - 1)];
           }
         }
       }
