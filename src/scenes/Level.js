@@ -212,6 +212,14 @@ class Level extends Phaser.Scene {
 
   create() {
     this.editorCreate();
+
+    let shape = this.make.graphics();
+    shape.fillRect(0, 0, 300, 300);
+    const mask = shape.createGeometryMask();
+    this.container_map.list.forEach((map) => {
+      map.setMask(mask);
+    });
+
     this.animateBoard();
     this.board = ["", "", "", "", "", "", "", "", ""];
     this.nCountMove = 0;
@@ -250,7 +258,7 @@ class Level extends Phaser.Scene {
 
   changePlayerTurn() {
     this.bPlayerTurn = !this.bPlayerTurn;
-    if (this.isBot && !this.bPlayerTurn ) {
+    if (this.isBot && !this.bPlayerTurn) {
       const nIndex = this.oBot.makeMove(this.board);
       setTimeout(() => {
         this.playMove(nIndex);
@@ -261,6 +269,7 @@ class Level extends Phaser.Scene {
   playMove(nIndex) {
     if (this.container_map.list[nIndex].texture.key == "map") {
       this.container_map.list[nIndex].setScale(0, 0);
+      this.container_map.list[nIndex].clearMask();
       this.container_map.list[nIndex].setTexture(
         this.bPlayerTurn ? this.player1 : this.player2
       );
@@ -293,6 +302,7 @@ class Level extends Phaser.Scene {
       const [a, b, c] = this.win[i];
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         this.drawLine(a, b, c);
+        // this.playWinAnimation(a, b, c);
         return board[a];
       }
     }
@@ -303,10 +313,12 @@ class Level extends Phaser.Scene {
     this.disableBoard();
     switch (nWinner) {
       case this.player1:
+        this.showConfetti();
         this.turn_img.setTexture(nWinner);
         this.txt_turn.setText(" Wins");
         break;
       case this.player2:
+        this.showConfetti();
         this.turn_img.setTexture(nWinner);
         this.txt_turn.setText(" Wins");
         break;
@@ -344,6 +356,70 @@ class Level extends Phaser.Scene {
       scaleX: 1,
       scaleY: 1,
       duration: 500,
+    });
+  }
+  showConfetti() {
+    const defaults = {
+      spread: 360,
+      ticks: 50,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 30,
+      shapes: ["star"],
+      colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+    };
+    function shoot() {
+      confetti({
+        ...defaults,
+        particleCount: 40,
+        scalar: 1.2,
+        shapes: ["star"],
+      });
+
+      confetti({
+        ...defaults,
+        particleCount: 10,
+        scalar: 0.75,
+        shapes: ["circle"],
+      });
+    }
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 100);
+    setTimeout(shoot, 200);
+  }
+  arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  playWinAnimation(nPoint1, nMidPoint, nPoint2) {
+    this.arr.splice(this.arr.indexOf(nPoint1), 1);
+    this.arr.splice(this.arr.indexOf(nMidPoint), 1);
+    this.arr.splice(this.arr.indexOf(nPoint2), 1);
+    for (let i = 0; i < this.arr.length; i++) {
+      this.container_map.list[this.arr[i]].setVisible(false);
+    }
+    this.tweens.add({
+      targets: [
+        this.container_map.list[nPoint1],
+        this.container_map.list[nMidPoint],
+        this.container_map.list[nPoint2],
+      ],
+      x: 0,
+      y: 0,
+      duration: 500,
+      onComplete: () => {
+        this.container_map.list[nPoint1].setVisible(false);
+        this.container_map.list[nPoint2].setVisible(false);
+        this.tweens.add({
+          targets: this.container_map.list[nMidPoint],
+          scaleX: 3,
+          scaleY: 3,
+          duration: 500,
+        });
+        this.tweens.add({
+          targets: this.container_board,
+          scaleX: 0,
+          scaleY: 0,
+          duration: 500,
+        });
+      },
     });
   }
 

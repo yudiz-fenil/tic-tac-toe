@@ -31,21 +31,27 @@ class Bot {
     const nIndex = Math.ceil(Math.random() * aMoves.length - 1);
     return aMoves[nIndex];
   }
+  // const move = board[j];
+  // if (move == this.sPlayerSymbol) {
+  //   if (aMoves.includes(j)) {
+  //     // console.log(aMoves, aMoves.indexOf(j), j);
+  //     aMoves.splice(aMoves.indexOf(j), 1);
+  //     // return aMoves[Math.ceil(Math.random() * aMoves.length - 1)];
+  //   }
+  // }
   level2Move(board) {
     const aMoves = [];
     const aCombination = [];
     for (let i = 0; i < this.win.length; i++) {
       const aMoves = this.win[i];
+      let countSign = 0;
       for (let j = 0; j < board.length; j++) {
         const move = board[j];
         if (move == this.sPlayerSymbol) {
-          if (aMoves.includes(j)) {
-            // console.log(aMoves, aMoves.indexOf(j), j);
-            aMoves.splice(aMoves.indexOf(j), 1);
-            // return aMoves[Math.ceil(Math.random() * aMoves.length - 1)];
-          }
+          countSign++;
         }
       }
+      console.log("countSign", countSign);
     }
     const nIndex = Math.ceil(Math.random() * aMoves.length - 1);
     return this.level1Move(board);
