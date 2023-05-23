@@ -1,0 +1,106 @@
+{
+    "id": "232190d1-192c-42da-896e-349e1288decb",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Home",
+        "borderWidth": 1080,
+        "borderHeight": 1920
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "925e3ae1-f0a3-40d3-be9a-132d6ec6a37e",
+            "label": "log",
+            "components": [],
+            "texture": {
+                "key": "log"
+            },
+            "x": 540,
+            "y": 660,
+            "scaleX": 0.5,
+            "scaleY": 0.5
+        },
+        {
+            "type": "Image",
+            "id": "305785a0-8ce5-4e2c-bc12-5cb5ff336cb7",
+            "label": "btn_computer",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "button1"
+            },
+            "x": 540,
+            "y": 1323
+        },
+        {
+            "type": "Image",
+            "id": "8cb68b72-16f8-48ee-adb2-93383f6b4885",
+            "label": "btn_pvp",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "button2"
+            },
+            "x": 540,
+            "y": 1146
+        },
+        {
+            "type": "Text",
+            "id": "57826d05-2076-4973-a0d4-088031ca0609",
+            "label": "title",
+            "components": [
+                "PreloadText"
+            ],
+            "x": 540,
+            "y": 200,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Tic Tac Toe",
+            "fontFamily": "Verdana",
+            "fontSize": "100px",
+            "fontStyle": "bold",
+            "color": "#000"
+        },
+        {
+            "type": "Text",
+            "id": "56c0b083-a905-47d9-873f-36ba45e7b4d7",
+            "label": "pvp",
+            "components": [
+                "PreloadText"
+            ],
+            "x": 540,
+            "y": 1146,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "PvP",
+            "fontFamily": "Verdana",
+            "fontSize": "40px",
+            "fontStyle": "bold"
+        },
+        {
+            "type": "Text",
+            "id": "dfe85f26-f50c-4321-ade6-32ad954bfa18",
+            "label": "computer",
+            "components": [
+                "PreloadText"
+            ],
+            "x": 540,
+            "y": 1323,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Computer",
+            "fontFamily": "Verdana",
+            "fontSize": "40px",
+            "fontStyle": "bold"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

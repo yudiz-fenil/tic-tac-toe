@@ -20,13 +20,26 @@
                 "PreloadText"
             ],
             "x": 540,
-            "y": 960,
+            "y": 1260,
             "originX": 0.5,
             "originY": 0.5,
             "text": "0%",
             "fontFamily": "Verdana",
             "fontSize": "100px",
             "fontStyle": "bold"
+        },
+        {
+            "type": "Image",
+            "id": "c0374fd6-3658-4959-be1b-67f3798d0cdc",
+            "label": "log",
+            "components": [],
+            "texture": {
+                "key": "log"
+            },
+            "x": 540,
+            "y": 660,
+            "scaleX": 0.5,
+            "scaleY": 0.5
         }
     ],
     "plainObjects": [],

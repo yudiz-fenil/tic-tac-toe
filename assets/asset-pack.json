@@ -7,9 +7,34 @@
                 "key": "Bot"
             },
             {
+                "url": "assets/images/button.png",
+                "type": "image",
+                "key": "button"
+            },
+            {
+                "url": "assets/images/button1.png",
+                "type": "image",
+                "key": "button1"
+            },
+            {
+                "url": "assets/images/button2.png",
+                "type": "image",
+                "key": "button2"
+            },
+            {
                 "url": "assets/images/cross.png",
                 "type": "image",
                 "key": "cross"
+            },
+            {
+                "url": "assets/images/home.png",
+                "type": "image",
+                "key": "home"
+            },
+            {
+                "url": "src/scenes/Home.js",
+                "type": "sceneFile",
+                "key": "Home"
             },
             {
                 "url": "assets/images/map.png",
