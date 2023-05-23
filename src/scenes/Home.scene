@@ -65,6 +65,27 @@
         },
         {
             "type": "Text",
+            "id": "bbb84029-1436-4d01-bf41-83e13a29bafa",
+            "label": "computer",
+            "components": [
+                "PreloadText"
+            ],
+            "x": 540,
+            "y": 1326,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Computer",
+            "fontFamily": "Verdana",
+            "fontSize": "44px",
+            "fontStyle": "bold",
+            "color": "#317dff",
+            "strokeThickness": 4,
+            "shadow.offsetY": 4,
+            "shadow.stroke": true,
+            "shadow.color": "#182ac9"
+        },
+        {
+            "type": "Text",
             "id": "56c0b083-a905-47d9-873f-36ba45e7b4d7",
             "label": "pvp",
             "components": [
@@ -76,24 +97,13 @@
             "originY": 0.5,
             "text": "PvP",
             "fontFamily": "Verdana",
-            "fontSize": "40px",
-            "fontStyle": "bold"
-        },
-        {
-            "type": "Text",
-            "id": "dfe85f26-f50c-4321-ade6-32ad954bfa18",
-            "label": "computer",
-            "components": [
-                "PreloadText"
-            ],
-            "x": 540,
-            "y": 1323,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Computer",
-            "fontFamily": "Verdana",
-            "fontSize": "40px",
-            "fontStyle": "bold"
+            "fontSize": "44px",
+            "fontStyle": "bold",
+            "color": "#d85a18",
+            "strokeThickness": 4,
+            "shadow.offsetY": 4,
+            "shadow.stroke": true,
+            "shadow.color": "#b53709"
         }
     ],
     "plainObjects": [],

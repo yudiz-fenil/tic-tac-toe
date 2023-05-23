@@ -3,79 +3,68 @@
 /* START OF COMPILED CODE */
 
 class Home extends Phaser.Scene {
-  constructor() {
-    super("Home");
 
-    /* START-USER-CTR-CODE */
+	constructor() {
+		super("Home");
+
+		/* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-  }
+	}
 
-  /** @returns {void} */
-  editorCreate() {
-    // log
-    const log = this.add.image(540, 660, "log");
-    log.scaleX = 0.5;
-    log.scaleY = 0.5;
+	/** @returns {void} */
+	editorCreate() {
 
-    // btn_computer
-    const btn_computer = this.add.image(540, 1323, "button1");
+		// log
+		const log = this.add.image(540, 660, "log");
+		log.scaleX = 0.5;
+		log.scaleY = 0.5;
 
-    // btn_pvp
-    const btn_pvp = this.add.image(540, 1146, "button2");
+		// btn_computer
+		const btn_computer = this.add.image(540, 1323, "button1");
 
-    // title
-    const title = this.add.text(540, 200, "", {});
-    title.setOrigin(0.5, 0.5);
-    title.text = "Tic Tac Toe";
-    title.setStyle({
-      color: "#000",
-      fontFamily: "Verdana",
-      fontSize: "100px",
-      fontStyle: "bold",
-    });
+		// btn_pvp
+		const btn_pvp = this.add.image(540, 1146, "button2");
 
-    // pvp
-    const pvp = this.add.text(540, 1146, "", {});
-    pvp.setOrigin(0.5, 0.5);
-    pvp.text = "PvP";
-    pvp.setStyle({
-      fontFamily: "Verdana",
-      fontSize: "40px",
-      fontStyle: "bold",
-    });
+		// title
+		const title = this.add.text(540, 200, "", {});
+		title.setOrigin(0.5, 0.5);
+		title.text = "Tic Tac Toe";
+		title.setStyle({ "color": "#000", "fontFamily": "Verdana", "fontSize": "100px", "fontStyle": "bold" });
 
-    // computer
-    const computer = this.add.text(540, 1323, "", {});
-    computer.setOrigin(0.5, 0.5);
-    computer.text = "Computer";
-    computer.setStyle({
-      fontFamily: "Verdana",
-      fontSize: "40px",
-      fontStyle: "bold",
-    });
+		// computer
+		const computer = this.add.text(540, 1326, "", {});
+		computer.setOrigin(0.5, 0.5);
+		computer.text = "Computer";
+		computer.setStyle({ "color": "#317dff", "fontFamily": "Verdana", "fontSize": "44px", "fontStyle": "bold", "strokeThickness":4,"shadow.offsetY":4,"shadow.color": "#182ac9", "shadow.stroke":true});
 
-    // title (components)
-    new PreloadText(title);
+		// pvp
+		const pvp = this.add.text(540, 1146, "", {});
+		pvp.setOrigin(0.5, 0.5);
+		pvp.text = "PvP";
+		pvp.setStyle({ "color": "#d85a18", "fontFamily": "Verdana", "fontSize": "44px", "fontStyle": "bold", "strokeThickness":4,"shadow.offsetY":4,"shadow.color": "#b53709", "shadow.stroke":true});
 
-    // pvp (components)
-    new PreloadText(pvp);
+		// title (components)
+		new PreloadText(title);
 
-    // computer (components)
-    new PreloadText(computer);
+		// computer (components)
+		new PreloadText(computer);
 
-    this.btn_computer = btn_computer;
-    this.btn_pvp = btn_pvp;
+		// pvp (components)
+		new PreloadText(pvp);
 
-    this.events.emit("scene-awake");
-  }
+		this.btn_computer = btn_computer;
+		this.btn_pvp = btn_pvp;
 
-  /** @type {Phaser.GameObjects.Image} */
-  btn_computer;
-  /** @type {Phaser.GameObjects.Image} */
-  btn_pvp;
+		this.events.emit("scene-awake");
+	}
 
-  /* START-USER-CODE */
+	/** @type {Phaser.GameObjects.Image} */
+	btn_computer;
+	/** @type {Phaser.GameObjects.Image} */
+	btn_pvp;
+
+	/* START-USER-CODE */
 
   // Write your code here
   pointerOverAnimation(btn) {
