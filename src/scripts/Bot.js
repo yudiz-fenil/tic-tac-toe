@@ -12,7 +12,7 @@ class Bot {
       [2, 4, 6],
     ];
     this.nBotLevel = 2;
-    console.log('Bot Level', this.nBotLevel)
+    this.board = ["", "", "", "", "", "", "", "", ""];
     this.sPlayerSymbol = this.oScene.player1;
     this.sBotSymbol = this.oScene.player2;
   }

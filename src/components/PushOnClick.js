@@ -6,27 +6,26 @@
 /* END-USER-IMPORTS */
 
 class PushOnClick extends UserComponent {
+  constructor(gameObject) {
+    super(gameObject);
 
-	constructor(gameObject) {
-		super(gameObject);
+    this.gameObject = gameObject;
+    gameObject["__PushOnClick"] = this;
 
-		this.gameObject = gameObject;
-		gameObject["__PushOnClick"] = this;
-
-		/* START-USER-CTR-CODE */
+    /* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-	}
+  }
 
-	/** @returns {PushOnClick} */
-	static getComponent(gameObject) {
-		return gameObject["__PushOnClick"];
-	}
+  /** @returns {PushOnClick} */
+  static getComponent(gameObject) {
+    return gameObject["__PushOnClick"];
+  }
 
-	/** @type {Phaser.GameObjects.Image} */
-	gameObject;
+  /** @type {Phaser.GameObjects.Image} */
+  gameObject;
 
-	/* START-USER-CODE */
+  /* START-USER-CODE */
 
   awake() {
     this.gameObject.setInteractive().on("pointerdown", () => {
@@ -37,6 +36,7 @@ class PushOnClick extends UserComponent {
         }
       } else {
         this.scene.playMove(nIndex);
+        this.scene.reqMove(nIndex);
       }
     });
   }

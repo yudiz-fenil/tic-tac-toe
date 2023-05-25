@@ -42,6 +42,11 @@
                 "key": "map"
             },
             {
+                "url": "src/scripts/SocketManager.js",
+                "type": "script",
+                "key": "SocketManager"
+            },
+            {
                 "url": "assets/images/zero.png",
                 "type": "image",
                 "key": "zero"
